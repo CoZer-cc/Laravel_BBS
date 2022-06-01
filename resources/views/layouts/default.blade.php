@@ -18,6 +18,7 @@
             <div class="btn btn-info">
                 <a href="{{ route('comments') }}" style="color:black">投稿</a>
                 <a href="{{ route('admin') }}" style="color:black">管理ページ</a>
+                <a href="{{ route('users.edit', Auth::user()) }}" style="color:black">資料更新</a>
             </div>
             @include('users._messages')
             @yield('content')

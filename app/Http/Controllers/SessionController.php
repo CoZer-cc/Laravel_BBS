@@ -8,6 +8,14 @@ use Illuminate\support\Facades\Auth;
 
 class SessionController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
+    
     public function create()
     {
         return view('sessions.create');
@@ -23,7 +31,8 @@ class SessionController extends Controller
         if (Auth::attempt($credentials, $request->has('remember'))) {
         // when login success
         session()->flash('success', 'Welcome back!');
-        return redirect()->route('home');
+        $fallback = route('users.edit', Auth::user());
+        return redirect()->intended($fallback);
         } else {
         // when login failed
         session()->flash('danger', 'ログイン失敗しました。');
@@ -39,4 +48,6 @@ class SessionController extends Controller
         session()->flash('success', 'ログアウトしました！');
         return redirect('login');
     }
+
+    
 }
