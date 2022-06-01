@@ -13,7 +13,7 @@
             <form action="{{ route('logout') }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button class="btn btn-danger" type="submit" name="button">退出</button>
+                <button class="btn btn-danger" type="submit" name="button">ログアウト</button>
             </form>
             <div class="btn btn-info">
                 <a href="{{ route('comments') }}" style="color:black">投稿</a>

@@ -36,6 +36,9 @@
 
         <button type="submit" class="btn btn-primary">登録</button>
       </form>
+      <a href={{ route('home') }}>
+        <button class="btn btn-primary">一覧へ</button>
+      </a>
     </div>
   </div>
 </div>

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'StaticPagesController@home')->name('home');
 Route::get('admin', 'StaticPagesController@admin')->name('admin');
-Route::delete('admin', 'StaticPagesController@destory')->name('admin.destory');
+Route::delete('admin/{id}', 'StaticPagesController@destory')->name('admin.destory');
 
 //Route::get('/login', 'UsersController@login')->name('login');
 Route::get('signup', 'UsersController@create')->name('signup');
