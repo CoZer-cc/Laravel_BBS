@@ -1,11 +1,11 @@
 @extends('layouts.default')
-@section('title', '登录')
+@section('title', '登録')
 
 @section('content')
 <div class="offset-md-2 col-md-8">
   <div class="card ">
     <div class="card-header">
-      <h5>登录</h5>
+      <h5>登録</h5>
     </div>
     <div class="card-body">
       @include('users._errors')
@@ -30,8 +30,11 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary">登録</button>
-      </form>
+          <button type="submit" class="btn btn-primary">登録</button>      
+        </form>
+        <a href={{ route('home') }}>
+          <button class="btn btn-primary">一覧へ</button>
+        </a>
 
       <hr>
 

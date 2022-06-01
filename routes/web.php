@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'StaticPagesController@home')->name('home');
 Route::get('admin', 'StaticPagesController@admin')->name('admin');
+Route::delete('admin', 'StaticPagesController@destory')->name('admin.destory');
 
 //Route::get('/login', 'UsersController@login')->name('login');
 Route::get('signup', 'UsersController@create')->name('signup');
@@ -25,3 +26,7 @@ Route::resource('users', 'UsersController');
 Route::get('login', 'SessionController@create')->name('login');
 Route::post('login', 'SessionController@store')->name('login');
 Route::delete('logout', 'SessionController@destroy')->name('logout');
+
+//comment controller
+Route::get('comments', 'CommentsController@create')->name('comments');
+Route::resource('comments', 'CommentsController', ['only' => ['store', 'destory']]);

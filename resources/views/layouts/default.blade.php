@@ -15,6 +15,10 @@
                 {{ method_field('DELETE') }}
                 <button class="btn btn-danger" type="submit" name="button">退出</button>
             </form>
+            <div class="btn btn-info">
+                <a href="{{ route('comments') }}" style="color:black">投稿</a>
+                <a href="{{ route('admin') }}" style="color:black">管理ページ</a>
+            </div>
             @include('users._messages')
             @yield('content')
 
@@ -23,7 +27,7 @@
             <a href="{{ route('signup') }}" style="color:black">登録</a>
             </div>
             <div class="btn btn-info">
-            <a href="{{ route('login') }}" style="color:black">管理ページ</a>
+            <a href="{{ route('login') }}" style="color:black">ログイン</a>
             </div>
         @include('users._messages')
         @yield('content')
